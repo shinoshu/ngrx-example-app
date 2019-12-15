@@ -5,9 +5,10 @@ import { CollectionPageComponent } from './containers/collection-page/collection
 import { UserTableComponent } from './components/user-table/user-table.component';
 
 import { MaterialModule } from '../material';
+import { UserAdditionalDialogComponent } from './components/user-additional-dialog/user-additional-dialog.component';
 
 @NgModule({
-  declarations: [CollectionPageComponent, UserTableComponent],
+  declarations: [CollectionPageComponent, UserTableComponent, UserAdditionalDialogComponent],
   imports: [
     CommonModule,
     UsersRoutingModule,
