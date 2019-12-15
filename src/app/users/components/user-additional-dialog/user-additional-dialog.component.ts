@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
+import { MatDialogRef } from '@angular/material';
 
 @Component({
   selector: 'app-user-additional-dialog',
@@ -12,11 +13,15 @@ export class UserAdditionalDialogComponent implements OnInit {
     email: [''],
   });
 
-  constructor(private fb: FormBuilder) { }
+  constructor(
+    private fb: FormBuilder,
+    private matDialogRef: MatDialogRef<UserAdditionalDialogComponent>,
+  ) { }
 
   ngOnInit() {
   }
 
   submit() {
+    this.matDialogRef.close(this.form.value);
   }
 }

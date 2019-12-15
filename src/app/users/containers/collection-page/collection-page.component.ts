@@ -17,6 +17,10 @@ export class CollectionPageComponent implements OnInit {
   }
 
   openDialog() {
-    this.dialog.open(UserAdditionalDialogComponent);
+    const dialogRef = this.dialog.open(UserAdditionalDialogComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(result);
+    });
   }
 }
