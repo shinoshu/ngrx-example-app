@@ -14,6 +14,7 @@ import { UserAdditionalButtonComponent } from './components/user-additional-butt
     CommonModule,
     UsersRoutingModule,
     MaterialModule,
-  ]
+  ],
+  entryComponents: [UserAdditionalDialogComponent],
 })
 export class UsersModule { }

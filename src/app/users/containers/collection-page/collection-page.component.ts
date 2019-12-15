@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material';
+
+import { UserAdditionalDialogComponent } from '../../components/user-additional-dialog/user-additional-dialog.component';
 
 @Component({
   selector: 'app-collection-page',
@@ -6,10 +9,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./collection-page.component.scss']
 })
 export class CollectionPageComponent implements OnInit {
-
-  constructor() { }
+  constructor(
+    private dialog: MatDialog
+  ) { }
 
   ngOnInit() {
   }
 
+  openDialog() {
+    this.dialog.open(UserAdditionalDialogComponent);
+  }
 }
