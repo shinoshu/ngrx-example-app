@@ -1,14 +1,5 @@
-import { Action } from '@ngrx/store';
+import { createAction, props } from '@ngrx/store';
 
-export enum UserActionTypes {
-  LoadUsers = '[User] Load Users',
-  
-  
-}
+import { User } from '../models/user';
 
-export class LoadUsers implements Action {
-  readonly type = UserActionTypes.LoadUsers;
-}
-
-
-export type UserActions = LoadUsers;
+export const addUser = createAction('[User/API] Add User', props<{ user: User }>());
