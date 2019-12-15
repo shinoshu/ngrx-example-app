@@ -1,14 +1,4 @@
-import { Action } from '@ngrx/store';
+import { createAction } from '@ngrx/store';
 
-export enum LayoutActionTypes {
-  LoadLayouts = '[Layout] Load Layouts',
-  
-  
-}
-
-export class LoadLayouts implements Action {
-  readonly type = LayoutActionTypes.LoadLayouts;
-}
-
-
-export type LayoutActions = LoadLayouts;
+export const openSidenav = createAction('[Layout] Open Sidenav');
+export const closeSidenav = createAction('[Layout] Close Sidenav');
