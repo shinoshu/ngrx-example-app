@@ -6,9 +6,10 @@ import { UserTableComponent } from './components/user-table/user-table.component
 
 import { MaterialModule } from '../material';
 import { UserAdditionalDialogComponent } from './components/user-additional-dialog/user-additional-dialog.component';
+import { UserAdditionalButtonComponent } from './components/user-additional-button/user-additional-button.component';
 
 @NgModule({
-  declarations: [CollectionPageComponent, UserTableComponent, UserAdditionalDialogComponent],
+  declarations: [CollectionPageComponent, UserTableComponent, UserAdditionalDialogComponent, UserAdditionalButtonComponent],
   imports: [
     CommonModule,
     UsersRoutingModule,
