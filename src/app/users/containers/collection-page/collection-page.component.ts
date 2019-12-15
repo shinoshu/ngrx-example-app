@@ -24,7 +24,7 @@ export class CollectionPageComponent implements OnInit {
     const dialogRef = this.dialog.open(UserAdditionalDialogComponent);
 
     dialogRef.afterClosed().subscribe(result => {
-      this.store.dispatch(addUser(result));
+      this.store.dispatch(addUser({ user: result }));
     });
   }
 }
