@@ -5,6 +5,7 @@ import { StoreModule } from '@ngrx/store';
 
 import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core';
+import { AuthModule } from './auth/auth.module';
 import { AppComponent } from './core/containers';
 import { reducers, metaReducers } from './reducers';
 
@@ -21,6 +22,7 @@ import { reducers, metaReducers } from './reducers';
     }),
     AppRoutingModule,
     CoreModule,
+    AuthModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
