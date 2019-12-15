@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-user-additional-dialog',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-additional-dialog.component.scss']
 })
 export class UserAdditionalDialogComponent implements OnInit {
+  form = this.fb.group({
+    name: [''],
+    email: [''],
+  });
 
-  constructor() { }
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
   }
 
+  submit() {
+  }
 }
