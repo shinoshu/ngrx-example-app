@@ -1,20 +1,13 @@
 import { Action } from '@ngrx/store';
+import * as fromUsers from '../reducers/users.reducer';
+import * as fromRoot from "../../reducers";
 
+export const usersFeatureKey = 'users';
 
-export const indexFeatureKey = 'index';
-
-export interface State {
-
+export interface UsersState {
+  [fromUsers.usersFeatureKey]: fromUsers.State;
 }
 
-export const initialState: State = {
-
-};
-
-export function reducer(state = initialState, action: Action): State {
-  switch (action.type) {
-
-    default:
-      return state;
-  }
+export interface State extends fromRoot.State {
+  [usersFeatureKey]: UsersState;
 }
