@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Routes, RouterModule } from '@angular/router';
+import { CollectionPageComponent } from './containers/collection-page/collection-page.component';
 
-
+const routes: Routes = [
+  { path: '', component: CollectionPageComponent, data: { title: 'Collection' } },
+];
 
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule
-  ]
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule],
 })
 export class UsersRoutingModule { }
