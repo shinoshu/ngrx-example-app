@@ -20,3 +20,15 @@ export const reducers: ActionReducerMap<State> = {
 
 
 export const metaReducers: MetaReducer<State>[] = !environment.production ? [] : [];
+
+/**
+ * Layout Reducers
+ */
+export const selectLayoutState = createFeatureSelector<State, fromLayout.State>(
+  'layout'
+);
+
+export const selecthowSidenav = createSelector(
+  selectLayoutState,
+  fromLayout.selectShowSidenav
+);
