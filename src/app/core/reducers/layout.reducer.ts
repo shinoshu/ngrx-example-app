@@ -1,20 +1,16 @@
-import { Action } from '@ngrx/store';
+import { createReducer } from '@ngrx/store';
 
 
 export const layoutFeatureKey = 'layout';
 
 export interface State {
-
+  showSidenav: boolean;
 }
 
 export const initialState: State = {
-
+  showSidenav: false,
 };
 
-export function reducer(state = initialState, action: Action): State {
-  switch (action.type) {
-
-    default:
-      return state;
-  }
-}
+export const reducer = createReducer(
+  initialState,
+);
