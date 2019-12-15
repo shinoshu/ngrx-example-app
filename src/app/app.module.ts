@@ -8,6 +8,8 @@ import { CoreModule } from './core';
 import { AuthModule } from './auth/auth.module';
 import { AppComponent } from './core/containers';
 import { reducers, metaReducers } from './reducers';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
 
 @NgModule({
   imports: [
@@ -23,6 +25,7 @@ import { reducers, metaReducers } from './reducers';
     AppRoutingModule,
     CoreModule,
     AuthModule,
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
   ],
   providers: [],
   bootstrap: [AppComponent]
