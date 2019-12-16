@@ -1,6 +1,7 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 import { MatDialogRef } from '@angular/material';
+import { v4 } from 'uuid';
 
 @Component({
   selector: 'app-user-additional-dialog',
@@ -9,6 +10,7 @@ import { MatDialogRef } from '@angular/material';
 })
 export class UserAdditionalDialogComponent implements OnInit {
   form = this.fb.group({
+    id: [v4()],
     name: [''],
     email: [''],
   });
