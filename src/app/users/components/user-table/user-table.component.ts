@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges, Input } from '@angular/core';
+import { Component, OnInit, OnChanges, Input, EventEmitter, Output } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { SelectionModel } from '@angular/cdk/collections';
 import { User } from '../../models/user';
@@ -10,6 +10,7 @@ import { User } from '../../models/user';
 })
 export class UserTableComponent implements OnInit, OnChanges {
   @Input() users: User[];
+  @Output() selected = new EventEmitter<User[]>();
 
   displayedColumns: string[] = ['select', 'position', 'name', 'email'];
   dataSource = new MatTableDataSource<User>();
@@ -18,6 +19,9 @@ export class UserTableComponent implements OnInit, OnChanges {
   constructor() { }
 
   ngOnInit() {
+    this.selection.changed.subscribe(source => {
+      this.selected.emit(source.source.selected);
+    });
   }
 
   ngOnChanges() {

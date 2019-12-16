@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 
 import { UserAdditionalDialogComponent } from '../../components/user-additional-dialog/user-additional-dialog.component';
 import { UserEditingDialogComponent } from '../../components/user-editing-dialog/user-editing-dialog.component';
-import { addUser } from '../../actions/user.actions';
+import { addUser, deleteUser, deleteUsers } from '../../actions/user.actions';
 import * as fromUsers from '../../reducers/index.reducer';
 import { User } from '../../models/user';
 
@@ -16,6 +16,7 @@ import { User } from '../../models/user';
 })
 export class CollectionPageComponent implements OnInit {
   users$: Observable<User[]>;
+  selectedUsers: User[];
 
   constructor(
     private dialog: MatDialog,
@@ -24,6 +25,10 @@ export class CollectionPageComponent implements OnInit {
 
   ngOnInit() {
     this.users$ = this.store.pipe(select(fromUsers.selectAllUsers));
+  }
+
+  setSelectedUsers(users: User[]) {
+    this.selectedUsers = users;
   }
 
   openAdditionalDialog() {
@@ -44,5 +49,11 @@ export class CollectionPageComponent implements OnInit {
         this.store.dispatch(addUser({ user: result }));
       }
     });
+  }
+
+  // TODO: openDeletionDialog
+  delete() {
+    const ids = this.selectedUsers.map(user => user.id);
+    this.store.dispatch(deleteUsers({ ids }));
   }
 }

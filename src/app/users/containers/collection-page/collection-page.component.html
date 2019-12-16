@@ -1,5 +1,6 @@
 <app-user-table
   [users]="users$ | async"
+  (selected)="setSelectedUsers($event)"
 >
 </app-user-table>
 
@@ -13,6 +14,7 @@
   >
   </app-user-editing-button>
   <app-user-deletion-button
+    (openDialog)="delete()"
   >
   </app-user-deletion-button>
 </div>
