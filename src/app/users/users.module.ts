@@ -12,9 +12,10 @@ import { UserAdditionalButtonComponent } from './components/user-additional-butt
 import * as fromUsers from './reducers/users.reducer';
 import { UserEditingButtonComponent } from './components/user-editing-button/user-editing-button.component';
 import { UserDeletionButtonComponent } from './components/user-deletion-button/user-deletion-button.component';
+import { UserEditingDialogComponent } from './components/user-editing-dialog/user-editing-dialog.component';
 
 @NgModule({
-  declarations: [CollectionPageComponent, UserTableComponent, UserAdditionalDialogComponent, UserAdditionalButtonComponent, UserEditingButtonComponent, UserDeletionButtonComponent],
+  declarations: [CollectionPageComponent, UserTableComponent, UserAdditionalDialogComponent, UserAdditionalButtonComponent, UserEditingButtonComponent, UserDeletionButtonComponent, UserEditingDialogComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,
