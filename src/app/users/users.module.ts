@@ -10,9 +10,10 @@ import { MaterialModule } from '../material';
 import { UserAdditionalDialogComponent } from './components/user-additional-dialog/user-additional-dialog.component';
 import { UserAdditionalButtonComponent } from './components/user-additional-button/user-additional-button.component';
 import * as fromUsers from './reducers/users.reducer';
+import { UserEditingButtonComponent } from './components/user-editing-button/user-editing-button.component';
 
 @NgModule({
-  declarations: [CollectionPageComponent, UserTableComponent, UserAdditionalDialogComponent, UserAdditionalButtonComponent],
+  declarations: [CollectionPageComponent, UserTableComponent, UserAdditionalDialogComponent, UserAdditionalButtonComponent, UserEditingButtonComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,
