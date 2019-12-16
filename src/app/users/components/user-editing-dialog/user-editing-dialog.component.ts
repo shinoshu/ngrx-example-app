@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
+import { MatDialogRef } from '@angular/material';
+import { v4 } from 'uuid';
 
 @Component({
   selector: 'app-user-editing-dialog',
@@ -6,10 +9,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-editing-dialog.component.scss']
 })
 export class UserEditingDialogComponent implements OnInit {
+  form = this.fb.group({
+    id: [v4()],
+    name: [''],
+    email: [''],
+  });
 
-  constructor() { }
+  constructor(
+    private fb: FormBuilder,
+    private matDialogRef: MatDialogRef<UserEditingDialogComponent>,
+  ) { }
 
   ngOnInit() {
   }
 
+  submit() {
+    this.matDialogRef.close(this.form.value);
+  }
 }

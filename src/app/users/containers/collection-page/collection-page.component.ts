@@ -4,6 +4,7 @@ import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
 import { UserAdditionalDialogComponent } from '../../components/user-additional-dialog/user-additional-dialog.component';
+import { UserEditingDialogComponent } from '../../components/user-editing-dialog/user-editing-dialog.component';
 import { addUser } from '../../actions/user.actions';
 import * as fromUsers from '../../reducers/index.reducer';
 import { User } from '../../models/user';
@@ -25,8 +26,16 @@ export class CollectionPageComponent implements OnInit {
     this.users$ = this.store.pipe(select(fromUsers.selectAllUsers));
   }
 
-  openDialog() {
+  openAdditionalDialog() {
     const dialogRef = this.dialog.open(UserAdditionalDialogComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.store.dispatch(addUser({ user: result }));
+    });
+  }
+
+  openEditingDialog() {
+    const dialogRef = this.dialog.open(UserEditingDialogComponent);
 
     dialogRef.afterClosed().subscribe(result => {
       this.store.dispatch(addUser({ user: result }));

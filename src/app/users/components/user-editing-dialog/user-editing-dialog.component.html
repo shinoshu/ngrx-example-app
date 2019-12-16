@@ -1,1 +1,27 @@
-<p>user-editing-dialog works!</p>
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <p>
+    <mat-form-field>
+      <input
+        type="text"
+        matInput
+        placeholder="Name"
+        formControlName="name"
+      />
+    </mat-form-field>
+  </p>
+
+  <p>
+    <mat-form-field>
+      <input
+        type="text"
+        matInput
+        placeholder="Email"
+        formControlName="email"
+      />
+    </mat-form-field>
+  </p>
+
+  <p class="submitButtons">
+    <button type="submit" mat-button>Submit</button>
+  </p>
+</form>
