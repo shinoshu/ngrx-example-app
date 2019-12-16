@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
-import { Store } from '@ngrx/store';
+import { select, Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
 
 import { UserAdditionalDialogComponent } from '../../components/user-additional-dialog/user-additional-dialog.component';
 import { addUser } from '../../actions/user.actions';
-import * as fromUsers from '../../reducers/users.reducer';
+import * as fromUsers from '../../reducers/index.reducer';
+import { User } from "../../models/user";
 
 @Component({
   selector: 'app-collection-page',
@@ -12,12 +14,15 @@ import * as fromUsers from '../../reducers/users.reducer';
   styleUrls: ['./collection-page.component.scss']
 })
 export class CollectionPageComponent implements OnInit {
+  users$: Observable<User[]>;
+
   constructor(
     private dialog: MatDialog,
     private store: Store<fromUsers.State>
   ) { }
 
   ngOnInit() {
+    this.users$ = this.store.pipe(select(fromUsers.selectAllUsers));
   }
 
   openDialog() {

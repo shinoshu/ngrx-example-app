@@ -16,3 +16,18 @@ export const reducer = createReducer(
   initialState,
   on(addUser, (state, { user }) => adapter.addOne(user, state)),
 );
+
+const {
+  selectIds,
+  selectEntities,
+  selectAll,
+  selectTotal,
+} = adapter.getSelectors();
+
+export const selectUserIds = selectIds;
+
+export const selectUserEntities = selectEntities;
+
+export const selectAllUsers = selectAll;
+
+export const selectUserTotal = selectTotal;
