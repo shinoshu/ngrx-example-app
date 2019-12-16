@@ -2,7 +2,20 @@
   [users]="users$ | async"
 >
 </app-user-table>
-<app-user-additional-button
-  (openDialog)="openDialog()"
->
-</app-user-additional-button>
+
+<div>
+  <app-user-additional-button
+    (openDialog)="openDialog()"
+  >
+  </app-user-additional-button>
+  <app-user-editing-button
+    (openDialog)="openDialog()"
+  >
+  </app-user-editing-button
+  >
+  <app-user-deletion-button
+    (openDialog)="openDialog()"
+  >
+  </app-user-deletion-button
+  >
+</div>
