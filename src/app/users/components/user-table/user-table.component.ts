@@ -25,6 +25,7 @@ export class UserTableComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges() {
+    this.selection.clear();
     this.dataSource.data = this.users.map((user, index) => {
       return {
         ...user,
