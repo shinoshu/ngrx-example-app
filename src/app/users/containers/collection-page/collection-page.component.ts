@@ -30,7 +30,9 @@ export class CollectionPageComponent implements OnInit {
     const dialogRef = this.dialog.open(UserAdditionalDialogComponent);
 
     dialogRef.afterClosed().subscribe(result => {
-      this.store.dispatch(addUser({ user: result }));
+      if (result) {
+        this.store.dispatch(addUser({ user: result }));
+      }
     });
   }
 
@@ -38,7 +40,9 @@ export class CollectionPageComponent implements OnInit {
     const dialogRef = this.dialog.open(UserEditingDialogComponent);
 
     dialogRef.afterClosed().subscribe(result => {
-      this.store.dispatch(addUser({ user: result }));
+      if (result) {
+        this.store.dispatch(addUser({ user: result }));
+      }
     });
   }
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
-import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
+import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material';
 import { v4 } from 'uuid';
 
@@ -11,8 +11,8 @@ import { v4 } from 'uuid';
 export class UserEditingDialogComponent implements OnInit {
   form = this.fb.group({
     id: [v4()],
-    name: [''],
-    email: [''],
+    name: ['', Validators.required],
+    email: ['', Validators.required],
   });
 
   constructor(
