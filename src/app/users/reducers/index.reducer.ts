@@ -4,7 +4,7 @@ import {
   ActionReducerMap,
 } from '@ngrx/store';
 import * as fromUsers from '../reducers/users.reducer';
-import * as fromRoot from "../../reducers";
+import * as fromRoot from '../../reducers';
 
 export const usersFeatureKey = 'users';
 

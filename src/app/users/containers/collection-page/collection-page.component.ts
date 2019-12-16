@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 import { UserAdditionalDialogComponent } from '../../components/user-additional-dialog/user-additional-dialog.component';
 import { addUser } from '../../actions/user.actions';
 import * as fromUsers from '../../reducers/index.reducer';
-import { User } from "../../models/user";
+import { User } from '../../models/user';
 
 @Component({
   selector: 'app-collection-page',
