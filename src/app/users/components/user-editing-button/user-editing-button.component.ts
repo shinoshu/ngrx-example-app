@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-user-editing-button',
@@ -6,6 +6,7 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./user-editing-button.component.scss']
 })
 export class UserEditingButtonComponent implements OnInit {
+  @Input() disabled: boolean;
   @Output() openDialog = new EventEmitter();
 
   constructor() { }

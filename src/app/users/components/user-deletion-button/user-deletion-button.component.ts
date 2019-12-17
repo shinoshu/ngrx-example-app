@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-user-deletion-button',
@@ -6,6 +6,7 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./user-deletion-button.component.scss']
 })
 export class UserDeletionButtonComponent implements OnInit {
+  @Input() disabled: boolean;
   @Output() openDialog = new EventEmitter();
 
   constructor() { }

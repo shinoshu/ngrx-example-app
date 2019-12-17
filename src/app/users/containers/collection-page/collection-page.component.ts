@@ -16,7 +16,7 @@ import { User } from '../../models/user';
 })
 export class CollectionPageComponent implements OnInit {
   users$: Observable<User[]>;
-  selectedUsers: User[];
+  selectedUsers: User[] = [];
 
   constructor(
     private dialog: MatDialog,
@@ -42,6 +42,10 @@ export class CollectionPageComponent implements OnInit {
   }
 
   openEditingDialog() {
+    if (this.selectedUsers.length < 0) {
+      return;
+    }
+
     const user = this.selectedUsers[0];
     const dialogRef = this.dialog.open(UserEditingDialogComponent, {
       data: { user },

@@ -1,3 +1,7 @@
-<button mat-fab (click)="openDialog.emit()">
+<button
+  mat-fab
+  [disabled]="disabled"
+  (click)="openDialog.emit()"
+>
   <mat-icon>edit</mat-icon>
 </button>

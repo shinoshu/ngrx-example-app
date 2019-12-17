@@ -10,10 +10,12 @@
   >
   </app-user-additional-button>
   <app-user-editing-button
+    [disabled]="this.selectedUsers.length !== 1"
     (openDialog)="openEditingDialog()"
   >
   </app-user-editing-button>
   <app-user-deletion-button
+    [disabled]="this.selectedUsers.length === 0"
     (openDialog)="delete()"
   >
   </app-user-deletion-button>
