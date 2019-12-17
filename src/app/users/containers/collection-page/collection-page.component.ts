@@ -42,7 +42,10 @@ export class CollectionPageComponent implements OnInit {
   }
 
   openEditingDialog() {
-    const dialogRef = this.dialog.open(UserEditingDialogComponent);
+    const user = this.selectedUsers[0];
+    const dialogRef = this.dialog.open(UserEditingDialogComponent, {
+      data: { user },
+    });
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {

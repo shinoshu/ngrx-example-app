@@ -23,6 +23,9 @@ import { UserEditingDialogComponent } from './components/user-editing-dialog/use
     UsersRoutingModule,
     MaterialModule,
   ],
-  entryComponents: [UserAdditionalDialogComponent],
+  entryComponents: [
+    UserAdditionalDialogComponent,
+    UserEditingDialogComponent,
+  ],
 })
 export class UsersModule { }

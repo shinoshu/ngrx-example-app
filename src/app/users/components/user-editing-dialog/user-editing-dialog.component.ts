@@ -1,7 +1,9 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, Inject } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { v4 } from 'uuid';
+import { User } from '../../models/user';
 
 @Component({
   selector: 'app-user-editing-dialog',
@@ -18,9 +20,11 @@ export class UserEditingDialogComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private matDialogRef: MatDialogRef<UserEditingDialogComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any,
   ) { }
 
   ngOnInit() {
+    this.form.patchValue(this.data.user);
   }
 
   submit() {
